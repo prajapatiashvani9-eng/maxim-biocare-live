@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUNIL S. PAWADE - Bill</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+/* BUTTONS */
+
+.controls {
+    text-align: center;
+    padding: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 4px;
+    border: none;
+    border-radius: 4px;
+    background: #a71919;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7d1111;
+}
+
+/* A4 BILL */
+
+.bill {
+    width: 210mm;
+    min-height: 297mm;
+    margin: auto;
+    background: white;
+    padding: 9mm;
+    box-shadow: 0 0 10px #888;
+}
+
+.main-border {
+    border: 2px solid #222;
+    min-height: 278mm;
+}
+
+/* HEADER */
+
+.header {
+    height: 35mm;
+    text-align: center;
+    padding-top: 8mm;
+    border-bottom: 1px solid #222;
+}
+
+.company {
+    color: #a71919;
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #a71919;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* ADDRESS */
+
+.address {
+    text-align: center;
+    padding: 7px;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* BILL DETAILS */
+
+.details {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    min-height: 30mm;
+}
+
+.customer {
+    padding: 9px;
+    border-right: 1px solid #222;
+    font-size: 15px;
+}
+
+.customer input {
+    width: 100%;
+    height: 24px;
+    margin-top: 7px;
+    border: none;
+    border-bottom: 1px solid #222;
+    outline: none;
+    font-size: 15px;
+}
+
+.bill-info {
+    padding: 9px;
+    font-size: 15px;
+}
+
+.bill-info input {
+    width: 65%;
+    height: 22px;
+    border: none;
+    border-bottom: 1px solid #222;
+    outline: none;
+    font-size: 15px;
+}
+
+/* TABLE */
+
+.bill-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bill-table th,
+.bill-table td {
+    border: 1px solid #222;
+}
+
+.bill-table th {
+    height: 13mm;
+    text-align: center;
+    font-size: 14px;
+}
+
+.bill-table td {
+    height: 9mm;
+    padding: 2px 5px;
+}
+
+.bill-table td input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+}
+
+/* COLUMN WIDTHS */
+
+.date-column {
+    width: 17%;
+}
+
+.particular-column {
+    width: 51%;
+}
+
+.quantity-column {
+    width: 14%;
+}
+
+.amount-column {
+    width: 18%;
+}
+
+.amount-input {
+    text-align: right;
+}
+
+/* BOTTOM SECTION */
+
+.bottom {
+    display: grid;
+    grid-template-columns: 72% 28%;
+}
+
+.amount-words {
+    min-height: 35mm;
+    border-right: 1px solid #222;
+    padding: 10px;
+}
+
+.amount-words input {
+    width: 90%;
+    margin-top: 15px;
+    border: none;
+    border-bottom: 1px solid #222;
+    outline: none;
+    font-size: 13px;
+}
+
+.summary {
+    width: 100%;
+}
+
+.summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.summary td {
+    border: 1px solid #222;
+    height: 10mm;
+    text-align: center;
+    font-weight: bold;
+}
+
+.summary input {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+.footer {
+    height: 31mm;
+    position: relative;
+}
+
+.pan {
+    position: absolute;
+    left: 5px;
+    bottom: 8px;
+    color: #a71919;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.signature {
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+    color: #a71919;
+    text-align: center;
+    font-weight: bold;
+}
+
+.signature .for {
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+
+.signature .proprietor {
+    font-size: 13px;
+}
+
+/* PRINT */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    .bill {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 9mm;
+        box-shadow: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- BUTTONS -->
+
+<div class="controls">
+
+    <button onclick="window.print()">
+        Print / Save PDF
+    </button>
+
+    <button onclick="addRow()">
+        Add Row
+    </button>
+
+    <button onclick="clearBill()">
+        Clear
+    </button>
+
+</div>
+
+
+<!-- BILL -->
+
+<div class="bill">
+
+<div class="main-border">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="company">
+            SUNIL S. PAWADE
+        </div>
+
+        <div class="subtitle">
+            Labour Transport Contractors
+        </div>
+
+    </div>
+
+
+    <!-- ADDRESS -->
+
+    <div class="address">
+
+        H. No. 590/6, Datta Mandir, Shiravane,
+        Nerul, Navi Mumbai - 400706.
+
+    </div>
+
+
+    <!-- CUSTOMER / BILL INFORMATION -->
+
+    <div class="details">
+
+
+        <div class="customer">
+
+            <b>M/s.</b>
+
+            <input type="text">
+
+            <input type="text">
+
+        </div>
+
+
+        <div class="bill-info">
+
+            <b>Bill No.</b>
+
+            <input type="text">
+
+            <br><br>
+
+            <b>Date :</b>
+
+            <!-- NORMAL TEXT INPUT - NO DATE FORMAT -->
+
+            <input
+                type="text"
+                placeholder=""
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN BILL TABLE -->
+
+    <table class="bill-table">
+
+        <thead>
+
+            <tr>
+
+                <th class="date-column">
+                    Date
+                </th>
+
+                <th class="particular-column">
+                    Particulars
+                </th>
+
+                <th class="quantity-column">
+                    Quantity
+                </th>
+
+                <th class="amount-column">
+                    AMOUNT<br>
+                    <small>Rs. &nbsp;&nbsp;&nbsp; Ps.</small>
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody id="billBody">
+
+        </tbody>
+
+    </table>
+
+
+    <!-- TOTAL / ADVANCE / BALANCE -->
+
+    <div class="bottom">
+
+
+        <div class="amount-words">
+
+            <b>Rs.</b>
+
+            <br>
+
+            <input
+                type="text"
+                placeholder=""
+            >
+
+        </div>
+
+
+        <div class="summary">
+
+            <table>
+
+                <tr>
+
+                    <td>
+                        Total
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="text"
+                            id="total"
+                            readonly
+                        >
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Advance
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            id="advance"
+                            value="0"
+                            oninput="calculateBalance()"
+                        >
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Balance
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="text"
+                            id="balance"
+                            readonly
+                        >
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <div class="pan">
+            PAN NO. : AYRPP9127C
+        </div>
+
+
+        <div class="signature">
+
+            <div class="for">
+                For SUNIL S. PAWADE
+            </div>
+
+            <div class="proprietor">
+                Proprietor
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+/* -----------------------------
+   CREATE EMPTY ROW
+----------------------------- */
+
+function createRow() {
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+
+        <td>
+            <input type="text">
+        </td>
+
+        <td>
+            <input type="text">
+        </td>
+
+        <td>
+            <input type="text">
+        </td>
+
+        <td>
+            <input
+                class="amount-input"
+                type="number"
+                step="0.01"
+                oninput="calculateTotal()"
+            >
+        </td>
+
+    `;
+
+    document
+        .getElementById("billBody")
+        .appendChild(row);
+}
+
+
+/* -----------------------------
+   CREATE EMPTY ROWS
+----------------------------- */
+
+for (let i = 0; i < 11; i++) {
+
+    createRow();
+
+}
+
+
+/* -----------------------------
+   ADD NEW ROW
+----------------------------- */
+
+function addRow() {
+
+    createRow();
+
+}
+
+
+/* -----------------------------
+   CALCULATE TOTAL
+----------------------------- */
+
+function calculateTotal() {
+
+    let total = 0;
+
+    const amounts =
+        document.querySelectorAll(".amount-input");
+
+    amounts.forEach(function(input) {
+
+        total += Number(input.value) || 0;
+
+    });
+
+    document.getElementById("total").value =
+        total.toFixed(2);
+
+    calculateBalance();
+
+}
+
+
+/* -----------------------------
+   CALCULATE BALANCE
+----------------------------- */
+
+function calculateBalance() {
+
+    const total =
+        Number(document.getElementById("total").value) || 0;
+
+    const advance =
+        Number(document.getElementById("advance").value) || 0;
+
+    const balance =
+        total - advance;
+
+    document.getElementById("balance").value =
+        balance.toFixed(2);
+
+}
+
+
+/* -----------------------------
+   CLEAR BILL
+----------------------------- */
+
+function clearBill() {
+
+    if (!confirm("Clear complete bill?")) {
+
+        return;
+
+    }
+
+    document.getElementById("billBody").innerHTML = "";
+
+    for (let i = 0; i < 11; i++) {
+
+        createRow();
+
+    }
+
+    document.getElementById("total").value = "";
+
+    document.getElementById("advance").value = "0";
+
+    document.getElementById("balance").value = "";
+
+}
+
+</script>
+
+</body>
+</html> 
