@@ -1,3 +1,4 @@
+```yaml
 name: Deploy React App to GitHub Pages
 
 on:
@@ -35,10 +36,16 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload build files
+      - name: Verify build files
+        run: |
+          echo "Generated files:"
+          find dist -maxdepth 2 -type f
+          test -f dist/index.html
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: dist
 
   deploy:
     environment:
@@ -51,3 +58,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+```
