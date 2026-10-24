@@ -108,7 +108,7 @@ const NavBtn = ({ open, setOpen }) => {
               onClick={(event) => goToSection(event, "about")}
               className="nav-link whitespace-nowrap"
             >
-              About Us
+              About
             </a>
 
             {/* Therapeutic Areas Dropdown */}
@@ -203,7 +203,7 @@ const NavBtn = ({ open, setOpen }) => {
                   onClick={(event) => goToSection(event, "about")}
                   className="mobile-link block py-3"
                 >
-                  About Us
+                  About
                 </a>
 
                 {/* Therapeutic Areas */}
