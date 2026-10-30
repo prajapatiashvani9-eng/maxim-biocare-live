@@ -66,3 +66,13 @@ const ImgSources = (props) => {
 };
 
 export default ImgSources;
+
+
+
+
+
+
+
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.45546118352647!2d73.14414147503462!3d19.226303350695808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79436279d8975%3A0x39caf2c554266e5c!2sHanuman%20Nagar%20-%20Jaibhai%20Marathi%20School%20Rd!5e0!3m2!1sen!2sin!4v1792982346408!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>

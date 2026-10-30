@@ -37,7 +37,7 @@ const ContactInfo = () => {
         <ContactItem
           icon={MapPin}
           title="Our Location"
-          value="Mumbai, Maharashtra, India"
+          value="Hanuman Nagar - Jaibhai Marathi School Rd"
         />
 
         <ContactItem

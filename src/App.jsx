@@ -11,6 +11,8 @@ import CTA from "./components/CTA/CTA";
 import Footer from "./components/Footer/Footer";
 import ContactPage from "./components/ContactPage/ContactPage";
 
+import AboutUs from "./components/about/AboutPage/AboutUs/AboutUs";
+
 function HomePage() {
   return (
     <>
@@ -33,6 +35,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<ContactPage />}/>
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
 
       <Footer />
