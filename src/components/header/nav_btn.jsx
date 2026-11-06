@@ -9,27 +9,34 @@ const NavBtn = ({ open, setOpen }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check whether the current page is Products
   const isProductsPage = location.pathname === "/products";
+  const isHomePage = location.pathname === "/";
 
   const closeMenu = () => {
     setOpen(false);
     setTherapeuticOpen(false);
   };
 
-  // Show Home after scrolling, or always on Products page
+  // Home button visibility logic
   useEffect(() => {
     const handleScroll = () => {
-      setShowHome(window.scrollY > 100);
+      if (isHomePage) {
+        // Home page: show only after scrolling
+        setShowHome(window.scrollY > 100);
+      } else {
+        // All other pages: always show Home
+        setShowHome(true);
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
     handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location.pathname]);
+  }, [location.pathname, isHomePage]);
 
   // Navigate to a section on the home page
   const goToSection = (event, sectionId) => {
@@ -62,6 +69,7 @@ const NavBtn = ({ open, setOpen }) => {
 
     if (location.pathname !== "/") {
       navigate("/");
+
       setTimeout(() => {
         window.scrollTo({
           top: 0,
@@ -88,8 +96,8 @@ const NavBtn = ({ open, setOpen }) => {
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center gap-4 xl:gap-7 2xl:gap-8">
 
-        {/* Home: always visible on Products page */}
-        {(isProductsPage || showHome) && (
+        {/* Home Button */}
+        {showHome && (
           <a
             href="/"
             onClick={goHome}
@@ -186,13 +194,15 @@ const NavBtn = ({ open, setOpen }) => {
           <div className="space-y-1 px-5 py-5 sm:px-8">
 
             {/* Mobile Home */}
-            <a
-              href="/"
-              onClick={goHome}
-              className="mobile-link block py-3"
-            >
-              Home
-            </a>
+            {showHome && (
+              <a
+                href="/"
+                onClick={goHome}
+                className="mobile-link block py-3"
+              >
+                Home
+              </a>
+            )}
 
             {/* Hide remaining mobile links on Products page */}
             {!isProductsPage && (

@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
+
 const MissionVision = () => {
   const pillars = [
     {

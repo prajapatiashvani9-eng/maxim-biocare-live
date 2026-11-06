@@ -10,8 +10,7 @@ import ImageShowcase from "./components/ImageShowcase/ImageShowcase";
 import CTA from "./components/CTA/CTA";
 import Footer from "./components/Footer/Footer";
 import ContactPage from "./components/ContactPage/ContactPage";
-
-import AboutUs from "./components/about/AboutPage/AboutUs/AboutUs";
+import AboutPage from "./components/about/AboutPage/AboutPage";
 
 function HomePage() {
   return (
@@ -35,7 +34,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<ContactPage />}/>
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutPage />} />
+        <Route path="/about-me" element={<AboutPage />} />
       </Routes>
 
       <Footer />

@@ -7,7 +7,7 @@ const products = [
     name: "Sipmin-9",
     type: "Syp.",
     category: "Trace Minerals & Antioxidants",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/sipmin-9.jpg",
     description:
       "Cell integrity antioxidant and liquid immunity booster containing essential trace minerals.",
     shortDescription:
@@ -35,7 +35,7 @@ const products = [
     name: "NEF Diet HP",
     type: "Sachet",
     category: "Renal Nutrition",
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/nef-diet-hp.jpg",
     description:
       "High-protein, low-electrolyte, sucrose-free renal nutritional supplement.",
     shortDescription:
@@ -62,7 +62,7 @@ const products = [
     name: "Constileave",
     type: "Sachet",
     category: "Constipation Management",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/constileave.jpg",
     description:
       "Fiber and prebiotic based powder containing Lactitol, Inulin and Isabgol.",
     shortDescription:
@@ -89,7 +89,7 @@ const products = [
     name: "Vomileave MD",
     type: "Tab.",
     category: "Antiemetic",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/vomileave-md.jpg",
     description:
       "Mouth-dissolving tablet containing Prochlorperazine Maleate.",
     shortDescription:
@@ -116,7 +116,7 @@ const products = [
     name: "Poolvita D",
     type: "Tab.",
     category: "Multivitamins & Antioxidants",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/poolvita-d.jpg",
     description:
       "Multivitamin and antioxidant formulation with vitamins and essential nutrients.",
     shortDescription:
@@ -143,7 +143,7 @@ const products = [
     name: "Poolvita CZ",
     type: "Tab.",
     category: "Multivitamins & Antioxidants",
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/poolvita-cz.jpg",
     description:
       "Multivitamin formulation supplemented with zinc.",
     shortDescription:
@@ -169,7 +169,7 @@ const products = [
     name: "CoEngine",
     type: "Tab.",
     category: "Multivitamins & Antioxidants",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/coengine.jpg",
     description:
       "Nutritional antioxidant formulation containing Co-enzyme Q10, Omega-3 and Vitamin E.",
     shortDescription:
@@ -197,7 +197,7 @@ const products = [
     name: "CoraMaxim",
     type: "Tab.",
     category: "Calcium & Trace Elements",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/coramaxim.jpg",
     description:
       "Calcium and trace element supplement containing calcium, vitamin D3, magnesium and zinc.",
     shortDescription:
@@ -225,7 +225,7 @@ const products = [
     name: "Rgood DSR",
     type: "Cap.",
     category: "PPI & Antacid",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/rgood-dsr.jpg",
     description:
       "Capsule formulation containing a proton pump inhibitor and sustained-release domperidone.",
     shortDescription:
@@ -251,7 +251,7 @@ const products = [
     name: "RaftMaxim",
     type: "Syp.",
     category: "GERD, Indigestion & Antacid",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/raftmaxim.jpg",
     description:
       "Antacid formulation designed for management of acid-related digestive discomfort.",
     shortDescription:
@@ -279,7 +279,7 @@ const products = [
     name: "Platehenz",
     type: "Tab.",
     category: "Platelet Support",
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/platehenz.jpg",
     description:
       "Nutritional formulation containing Carica Papaya, Tinospora Cordifolia, Goat Milk Powder and Vitamin E.",
     shortDescription:
@@ -307,7 +307,7 @@ const products = [
     name: "ManoMax",
     type: "Tab.",
     category: "UTI Management",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/manomax.jpg",
     description:
       "Nutritional formulation containing D-Mannose and Cranberry extract.",
     shortDescription:
@@ -334,7 +334,7 @@ const products = [
     name: "PYMOFY-1GM",
     type: "Tab.",
     category: "Antipyretic",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/pymofy-1gm.jpg",
     description:
       "Paracetamol bilayer tablet with immediate-release and sustained-release components.",
     shortDescription:
@@ -362,7 +362,7 @@ const products = [
     name: "Defagrand",
     type: "Tab.",
     category: "Corticosteroid",
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/defagrand.jpg",
     description: "Tablet containing Deflazacort.",
     shortDescription: "Deflazacort tablet formulation.",
     composition: "Deflazacort 6 mg",
@@ -387,7 +387,7 @@ const products = [
     name: "MVIPool-CP",
     type: "Inj.",
     category: "Critical Care - Multivitamins & Antioxidants",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/mvipool-cp.jpg",
     description:
       "Combination injectable pack containing vitamin C, methylcobalamin, folic acid and nicotinamide.",
     shortDescription:
@@ -414,7 +414,7 @@ const products = [
     name: "MVIPool",
     type: "Inj.",
     category: "Critical Care - Multivitamins",
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/mvipool.jpg",
     description:
       "Multivitamin injection containing methylcobalamin, nicotinamide, pyridoxine and D-panthenol.",
     shortDescription:
@@ -442,7 +442,7 @@ const products = [
     name: "Maxeso",
     type: "Inj.",
     category: "PPI",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/maxeso.jpg",
     description:
       "Proton pump inhibitor injection containing Esomeprazole.",
     shortDescription: "Esomeprazole injectable formulation.",
@@ -468,7 +468,7 @@ const products = [
     name: "CefMaxim",
     type: "Inj.",
     category: "Antibiotics",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/cefmaxim.jpg",
     description:
       "Antibiotic injection containing Cefoperazone and Sulbactam.",
     shortDescription: "Combination antibiotic injection.",
@@ -493,7 +493,7 @@ const products = [
     name: "LactoCheck 1.125 Gm",
     type: "Inj.",
     category: "Antibiotics",
-    image: "https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/lactocheck-1-125-gm.jpg",
     description:
       "Fourth-generation cephalosporin antibiotic combination with beta-lactamase inhibitor.",
     shortDescription: "Combination antibiotic injection.",
@@ -518,7 +518,7 @@ const products = [
     name: "Meromaxim",
     type: "Inj.",
     category: "Antibiotics",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/meromaxim.jpg",
     description:
       "Carbapenem antibiotic injection containing Meropenem.",
     shortDescription: "Meropenem injectable formulation.",
@@ -543,7 +543,7 @@ const products = [
     name: "MeroMaxim-S",
     type: "Inj.",
     category: "Antibiotics",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80",
+    image: "/imgs/meromaxim-s.jpg",
     description:
       "Carbapenem antibiotic combination containing Meropenem and Sulbactam.",
     shortDescription: "Combination antibiotic injection.",

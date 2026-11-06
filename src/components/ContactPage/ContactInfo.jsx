@@ -23,21 +23,21 @@ const ContactInfo = () => {
         <ContactItem
           icon={Mail}
           title="Email Us"
-          value="info@maximbio.com"
-          href="mailto:info@maximbio.com"
+          value="info@maximbiocare.com"
+          href="mailto:info@maximbiocare.com"
         />
 
         <ContactItem
           icon={Phone}
           title="Call Us"
-          value="+91 00000 00000"
-          href="tel:+910000000000"
+          value="+91 7498570893"
+          href="tel:+917498570893"
         />
 
         <ContactItem
           icon={MapPin}
           title="Our Location"
-          value="Hanuman Nagar - Jaibhai Marathi School Rd"
+          value="Unit no 06, Aanandi Apartment, katemanivali Kalyan east Pin code 421306"
         />
 
         <ContactItem

@@ -1,20 +1,32 @@
 import { fallbackFor } from "../utils/fallbackGradient";
 
 function ProductCard({ product, onViewDetails }) {
-return ( <div className="group relative h-64 overflow-hidden rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-2xl">
-{/* Product Image */}
-<div
-className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-105"
-style={{
-backgroundImage: product.image
-? `url(${product.image})`
-: fallbackFor(product.category),
-}}
-/>
+return ( <div className="group relative h-64 overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-500 hover:shadow-2xl">
+
+
+  {/* Product Image */}
+  <div className="absolute inset-0 flex items-center justify-center bg-white p-5">
+    {product.image ? (
+      <img
+        src={product.image}
+        alt={product.name}
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+      />
+    ) : (
+      <div
+        className="absolute inset-0"
+        style={{
+          background: fallbackFor(product.category),
+        }}
+      />
+    )}
+  </div>
 
   {/* Dark Gradient */}
   <div
-    className="absolute inset-0"
+    className="absolute inset-0 pointer-events-none"
     style={{
       background:
         "linear-gradient(to top, rgba(9,25,36,0.95) 0%, rgba(9,25,36,0.55) 45%, rgba(9,25,36,0.05) 75%)",
@@ -48,7 +60,6 @@ backgroundImage: product.image
     </button>
   </div>
 </div>
-
 
 );
 }

@@ -4,18 +4,31 @@ import CompanyDetails from "./CompanyDetails";
 import WhatWeDo from "./WhatWeDo";
 import MissionVision from "./MissionVision";
 
+import Reveal from "../AboutMe/components/Reveal";
+
 const AboutUs = () => {
   return (
     <main className="min-h-screen bg-white">
 
-      <AboutUsHero />
+      {/* Hero Section */}
+      <Reveal>
+        <AboutUsHero />
+      </Reveal>
 
-      <AboutUsIntro />
+      {/* About Us Introduction */}
+      <Reveal delay={100}>
+        <AboutUsIntro />
+      </Reveal>
 
-      <CompanyDetails />
+      {/* Company Details */}
+      <Reveal delay={100}>
+        <CompanyDetails />
+      </Reveal>
 
+      {/* What We Do */}
       <WhatWeDo />
 
+      {/* Mission & Vision */}
       <MissionVision />
 
     </main>

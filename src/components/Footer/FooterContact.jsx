@@ -7,15 +7,15 @@ return (
 
         <div className="space-y-3 text-white/50">
             <p>
-              Mumbai, Maharashtra, India
+              Unit no 06, Aanandi Apartment, katemanivali Kalyan east Pin code 421306
             </p>
 
             <p>
-              info@maximbio.com
+              info@maximbiocare.com
             </p>
 
             <p>
-              +91 00000 00000
+              +91 7498570893
             </p>
           </div>
     </div>
